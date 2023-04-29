@@ -21,18 +21,18 @@ class DetailsPage extends StatelessWidget {
           child: Column(
             children: [
               _Header(
-               // imageUrl: product.image ?? 'none',
+                imageUrl: product.image ?? 'none',
               ),
-              _Title(),
+              _Title(title: product.title ?? 'No tittle',),
               Container(
-               // child: Text(
-                //title: product.title ?? 'No Title'
-                //  product.description ?? 'No Description',
-                //  style: TextStyle(
-                //    fontSize: 18.sp,
-                //    color: MyColors.inputBackground,
-                //  ),
-               // ),
+                child: Text(
+                 
+                 product.description ?? 'No Description',
+                 style: TextStyle(
+                   fontSize: 18.sp,
+                   color: MyColors.inputBackground,
+                  ),
+                ),
               ),
             ],
           ),
@@ -88,10 +88,10 @@ class DetailsPage extends StatelessWidget {
 }
 
 class _Title extends StatelessWidget {
-  //final String title;
+  final String title;
   const _Title({
     super.key,
-   // required this.title,
+    required this.title,
   });
 
   @override
@@ -153,10 +153,10 @@ class _Title extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  //final String imageUrl;
+  final String imageUrl;
   const _Header({
     super.key,
-    //required this.imageUrl,
+    required this.imageUrl,
   });
 
   @override
@@ -173,7 +173,7 @@ class _Header extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24.r),
                   image: DecorationImage(
                     image: NetworkImage(
-                       'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+                       imageUrl,
                         ),
                    fit: BoxFit.cover,
                   )),
